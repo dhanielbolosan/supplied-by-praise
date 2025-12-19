@@ -1,4 +1,5 @@
 import { Suspense } from "react"
+import Image from "next/image"
 
 import { listRegions } from "@lib/data/regions"
 import { StoreRegion } from "@medusajs/types"
@@ -25,7 +26,12 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
-              Supplied By Praise
+              <Image
+                src="/logo.svg"
+                alt="Supplied By Praise"
+                width={40}
+                height={40}
+              />
             </LocalizedClientLink>
           </div>
 

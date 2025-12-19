@@ -58,18 +58,6 @@ module.exports = {
       fontSize: {
         "3xl": "2rem",
       },
-      fontFamily: {
-        sans: [
-          "Inter",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Ubuntu",
-          "sans-serif",
-        ],
-      },
       keyframes: {
         ring: {
           "0%": { transform: "rotate(0deg)" },
@@ -156,6 +144,10 @@ module.exports = {
         "slide-in": "slide-in 1.2s cubic-bezier(.41,.73,.51,1.02)",
         leave: "leave 150ms ease-in forwards",
       },
+    },
+    fontFamily: {
+      sans: ["Courier Prime", "monospace"],
+      inter: ["Courier Prime", "monospace"],
     },
   },
   plugins: [require("tailwindcss-radix")()],

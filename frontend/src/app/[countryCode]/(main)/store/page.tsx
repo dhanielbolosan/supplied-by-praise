@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-
+import { resolveProductFilters } from "@lib/util/get-product-filters"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import StoreTemplate from "@modules/store/templates"
 
@@ -22,12 +22,15 @@ export default async function StorePage(props: Params) {
   const params = await props.params;
   const searchParams = await props.searchParams;
   const { sortBy, page } = searchParams
+  const { typeId, tagId } = await resolveProductFilters(props.searchParams)
 
   return (
     <StoreTemplate
       sortBy={sortBy}
       page={page}
       countryCode={params.countryCode}
+      typeId={typeId}
+      tagId={tagId}
     />
   )
 }
