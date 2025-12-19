@@ -4,6 +4,12 @@ import "styles/globals.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
+  title: "Supplied By Praise",
+  description: "Supplied By Praise storefront",
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
 }
 
 export default function RootLayout(props: { children: React.ReactNode }) {
