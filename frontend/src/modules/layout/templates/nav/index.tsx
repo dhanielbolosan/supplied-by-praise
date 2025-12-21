@@ -16,7 +16,7 @@ export default async function Nav() {
         <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
-              <SideMenu regions={regions} />
+              <SideMenu />
             </div>
           </div>
 
@@ -38,21 +38,21 @@ export default async function Nav() {
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
               <LocalizedClientLink
-                className="hover:text-ui-fg-base"
+                className="hover:text-ui-fg-muted"
                 href="/account"
                 data-testid="nav-account-link"
               >
-                Account
+                ACCOUNT
               </LocalizedClientLink>
             </div>
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="hover:text-ui-fg-base flex gap-2"
+                  className="hover:text-ui-fg-muted flex gap-2"
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
-                  Cart (0)
+                  BAG (0)
                 </LocalizedClientLink>
               }
             >

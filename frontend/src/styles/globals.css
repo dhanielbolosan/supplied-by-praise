@@ -63,6 +63,7 @@
   html,
   body {
     font-family: "Courier Prime", monospace !important;
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* Force all elements to inherit font-family unless they are explicitly monospace */
@@ -72,6 +73,10 @@
 }
 
 @layer utilities {
+  .tap-highlight-none {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -82,16 +87,16 @@
   }
 
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  input:focus ~ label,
-  input:not(:placeholder-shown) ~ label {
+  input:focus~label,
+  input:not(:placeholder-shown)~label {
     @apply -translate-y-2 text-xsmall-regular;
   }
 
-  input:focus ~ label {
+  input:focus~label {
     @apply left-0;
   }
 
@@ -177,5 +182,14 @@
 
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
+  }
+
+  .custom-link {
+    @apply text-black transition-colors duration-200 ease-in;
+  }
+
+  .custom-link:hover {
+    @apply text-ui-fg-muted;
+    @apply cursor-pointer;
   }
 }

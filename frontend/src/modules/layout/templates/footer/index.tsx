@@ -21,13 +21,13 @@ export default async function Footer() {
           <div className="flex flex-col gap-2">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+              className="custom-link txt-compact-xlarge-plus uppercase"
             >
               Supplied By Praise
             </LocalizedClientLink>
             <div className="flex flex-col gap-1 text-ui-fg-subtle txt-small">
-              <span className="hover:text-ui-fg-base cursor-pointer">Notify Me</span>
-              <span className="hover:text-ui-fg-base cursor-pointer">Contact Us</span>
+              <span className="custom-link">Notify Me</span>
+              <span className="custom-link">Contact Us</span>
             </div>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -40,7 +40,7 @@ export default async function Footer() {
                   {collections.map((c) => (
                     <li key={c.id}>
                       <LocalizedClientLink
-                        className="hover:text-ui-fg-base"
+                        className="custom-link"
                         href={`/collections/${c.handle}`}
                       >
                         {c.title}
@@ -64,7 +64,7 @@ export default async function Footer() {
                   {product_types.map((t) => (
                     <li key={t.id}>
                       <LocalizedClientLink
-                        className="hover:text-ui-fg-base"
+                        className="custom-link"
                         href={`/store?type=${t.value}`}
                       >
                         {t.value}
@@ -83,7 +83,7 @@ export default async function Footer() {
                   {tags.map((t) => (
                     <li key={t.id}>
                       <LocalizedClientLink
-                        className="hover:text-ui-fg-base"
+                        className="custom-link"
                         href={`/store?tag=${t.value}`}
                       >
                         {t.value}

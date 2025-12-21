@@ -66,11 +66,9 @@ export default function HomeSlider({ products }: { products: SliderProduct[] }) 
           </div>
         </div>
 
-        {/* Bottom info section */}
-        <div className="w-full p-6 grid grid-cols-2">
-          
-          {/* Left Column: Collection & Product Info */}
-          <div className="flex flex-col justify-end items-start gap-1">
+        <div className="w-full p-6 grid grid-cols-2 h-48">
+
+          <div className="flex flex-col justify-start items-start gap-1">
             <span className="text-sm uppercase tracking-widest text-ui-fg-muted font-mono italic">
               {products[currentIndex].collectionTitle}
             </span>
@@ -79,33 +77,32 @@ export default function HomeSlider({ products }: { products: SliderProduct[] }) 
                 {products[currentIndex].title}
               </Link>
             </h2>
-            <p className="text-sm text-ui-fg-subtle max-w-md mt-2 font-mono">
+            <p className="text-sm text-ui-fg-subtle max-w-md mt-2 font-mono break-words">
               {products[currentIndex].description ? products[currentIndex].description : "N/A"}
             </p>
           </div>
 
-          {/* Right Column: Controls */}
-          <div className="flex flex-col justify-end items-end gap-2">
-             <div className="flex flex-col items-center gap-1 w-fit">
-                <div className="flex gap-6">
-                    <button
-                    onClick={prev}
-                    className="p-2 hover:opacity-50 transition-opacity"
-                    aria-label="Previous product"
-                    >
-                    <ArrowLeftIcon className="w-6 h-6" />
-                    </button>
-                    <button
-                    onClick={next}
-                    className="p-2 hover:opacity-50 transition-opacity"
-                    aria-label="Next product"
-                    >
-                    <ArrowRightIcon className="w-6 h-6" />
-                    </button>
-                </div>
-                <span className="font-mono text-sm text-ui-fg-muted">
-                    {currentIndex + 1} / {total}
-                </span>
+          <div className="flex flex-col justify-start items-end gap-2">
+            <div className="flex flex-col items-center gap-1 w-fit">
+              <div className="flex gap-6">
+                <button
+                  onClick={prev}
+                  className="p-2 hover:opacity-50 transition-opacity"
+                  aria-label="Previous product"
+                >
+                  <ArrowLeftIcon className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={next}
+                  className="p-2 hover:opacity-50 transition-opacity"
+                  aria-label="Next product"
+                >
+                  <ArrowRightIcon className="w-6 h-6" />
+                </button>
+              </div>
+              <span className="font-mono text-sm text-ui-fg-muted">
+                {currentIndex + 1} / {total}
+              </span>
             </div>
           </div>
         </div>
