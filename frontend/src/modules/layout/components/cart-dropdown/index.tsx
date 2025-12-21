@@ -88,24 +88,20 @@ const CartDropdown = ({
           show={cartDropdownOpen}
           as={Fragment}
           enter="transition ease-out duration-200"
-          enterFrom="opacity-0 translate-y-2"
+          enterFrom="opacity-0 -translate-y-1"
           enterTo="opacity-100 translate-y-0"
           leave="transition ease-in duration-150"
           leaveFrom="opacity-100 translate-y-0"
-          leaveTo="opacity-0 translate-y-2"
+          leaveTo="opacity-0 -translate-y-1"
         >
           <PopoverPanel
             static
             className="hidden small:block absolute top-[calc(100%)] right-0 bg-white w-[420px] text-black shadow-none rounded-none border border-ui-border-base"
             data-testid="nav-cart-dropdown"
           >
-            <div className="p-4 flex items-center justify-between">
-              <h3 className="text-lg uppercase tracking-tight">Shopping Bag</h3>
-            </div>
-
             {cartState && cartState.items?.length ? (
               <>
-                <div className="overflow-y-scroll max-h-[402px] no-scrollbar">
+                <div className="overflow-y-scroll max-h-[402px] no-scrollbar pt-4">
                   {cartState.items
                     .sort((a, b) => {
                       return (a.created_at ?? "") > (b.created_at ?? "")
@@ -144,7 +140,6 @@ const CartDropdown = ({
                                     {item.title}
                                   </LocalizedClientLink>
                                 </h3>
-                                {/* OPTIONS: Smaller, monospace look */}
                                 <div className="text-xs uppercase text-gray-500 font-mono -mb-1">
                                   <LineItemOptions
                                     variant={item.variant}
