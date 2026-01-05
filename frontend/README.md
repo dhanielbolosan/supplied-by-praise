@@ -49,7 +49,7 @@ The Medusa Next.js Starter is built with:
 
 Features include:
 
-- Full e-commerce support:
+- Full ecommerce support:
   - Product Detail Page
   - Product Overview Page
   - Product Collections
