@@ -17,7 +17,7 @@
 </h4>
 
 <p align="center">
-  Building blocks for e-commerce
+  Building blocks for ecommerce
 </p>
 <p align="center">
   <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
