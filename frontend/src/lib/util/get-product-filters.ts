@@ -1,13 +1,16 @@
 import { listProductTypes } from "@lib/data/product-types"
 import { listTags } from "@lib/data/tags"
+import { getCategoryByHandle } from "@lib/data/categories"
 
-export const resolveProductFilters = async ( searchParams: Promise<{ [key: string]: string | string[] | undefined }>) => {
+export const resolveProductFilters = async (searchParams: Promise<{ [key: string]: string | string[] | undefined }>) => {
   const params = await searchParams
   const typeValue = params?.type as string | undefined
   const tagValue = params?.tag as string | undefined
-  
+  const categoryHandle = params?.category as string | undefined
+
   let typeId: string | undefined
   let tagId: string | undefined
+  let categoryId: string | undefined
 
   if (typeValue) {
     const { product_types } = await listProductTypes({ limit: "100" })
@@ -29,8 +32,16 @@ export const resolveProductFilters = async ( searchParams: Promise<{ [key: strin
     }
   }
 
+  if (categoryHandle) {
+    const category = await getCategoryByHandle([categoryHandle])
+    if (category) {
+      categoryId = category.id
+    }
+  }
+
   return {
     typeId,
     tagId,
+    categoryId,
   }
 }

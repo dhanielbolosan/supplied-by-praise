@@ -15,9 +15,9 @@ export default async function Footer() {
   const { tags } = await listTags()
 
   return (
-    <footer className="border-t border-ui-border-base w-full">
-      <div className="content-container flex flex-col w-full">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-12">
+    <footer className="border-t border-ui-border-base w-full h-[200px] overflow-hidden bg-white">
+      <div className="content-container flex flex-col w-full h-full">
+        <div className="flex flex-row items-start justify-between h-full py-12">
           <div className="flex flex-col gap-2">
             <LocalizedClientLink
               href="/"
