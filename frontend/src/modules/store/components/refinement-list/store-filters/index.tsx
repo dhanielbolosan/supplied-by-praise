@@ -7,7 +7,7 @@ type StoreFiltersProps = {
     view?: string;
 }
 
-const filterOptions = [
+export const filterOptions = [
     {
         value: "new",
         label: "NEW",

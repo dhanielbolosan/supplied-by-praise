@@ -3,7 +3,7 @@
 import { useStore } from "@modules/store/context/store-context"
 import { PlusIcon, MinusIcon } from "@radix-ui/react-icons"
 
-const ZoomToggle = () => {
+const ZoomToggle = ({ className }: { className?: string }) => {
     const { columns, setColumns } = useStore()
 
     const handleZoomIn = () => {
@@ -15,7 +15,7 @@ const ZoomToggle = () => {
     }
 
     return (
-        <div className="flex items-center gap-x-2 mt-4 pl-6 pr-4">
+        <div className={`flex items-center gap-x-2 ${className || "mt-4 pl-6 pr-4"}`}>
             <button
                 onClick={handleZoomOut}
                 disabled={columns >= 5}
