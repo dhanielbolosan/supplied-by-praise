@@ -30,8 +30,7 @@ export default function ProductGridItem({
           size="square"
           isFullImage
         />
-        
-        {/* Overlay */}
+
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <div className="bg-white w-[6rem] h-[2rem] shadow-md flex items-center justify-center rounded-soft text-xsmall-regular small:text-small-regular">
             {outOfStock ? (

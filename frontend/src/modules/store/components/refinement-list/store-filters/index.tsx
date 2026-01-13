@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 type StoreFiltersProps = {
     view?: string;
+    excludeCurrent?: boolean;
 }
 
 export const filterOptions = [
@@ -54,13 +55,17 @@ export const filterOptions = [
     },
 ]
 
-const StoreFilters = ({ view }: StoreFiltersProps) => {
+const StoreFilters = ({ view, excludeCurrent }: StoreFiltersProps) => {
     const router = useRouter()
     const pathname = usePathname()
     const searchParams = useSearchParams()
 
     const categoryHandle = searchParams.get("category")
     const currentFilter = view === "new" ? "new" : categoryHandle || "all"
+
+    const availableOptions = excludeCurrent
+        ? filterOptions.filter((option) => option.value !== currentFilter)
+        : filterOptions
 
     const handleChange = (value: string) => {
         const params = new URLSearchParams(searchParams)
@@ -81,7 +86,7 @@ const StoreFilters = ({ view }: StoreFiltersProps) => {
 
     return (
         <FilterRadioGroup
-            items={filterOptions}
+            items={availableOptions}
             value={currentFilter}
             handleChange={handleChange}
         />

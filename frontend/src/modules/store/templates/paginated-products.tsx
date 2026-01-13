@@ -81,6 +81,21 @@ export default async function PaginatedProducts({
 
   const totalPages = Math.ceil(count / PRODUCT_LIMIT)
 
+  if (products.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center w-full min-h-[50vh] gap-y-6 pt-20">
+        <div className="flex flex-col items-center gap-y-2 text-center px-4">
+          <p className="text-ui-fg-base text-large-semi uppercase tracking-[0.2em]">
+            No Items Found
+          </p>
+          <p className="text-ui-fg-subtle text-small-regular uppercase tracking-widest max-w-[300px]">
+            Adjust your filters to find available stock!
+          </p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
       <div className="h-full overflow-y-auto w-full custom-scrollbar pr-2">
