@@ -28,7 +28,7 @@ const Hero = () => {
 
       <div className="absolute bottom-4 left-4 z-20 flex flex-col gap-2 text-ui-fg-base text-medium-regular">
         <Link
-          href="https://www.tiktok.com/@.praisemcb?_r=1&_t=ZP-92LwzgBsRVn"
+          href="https://www.tiktok.com/@.dbruhhhh"
           target="_blank"
           className="flex items-center gap-2"
         >
@@ -38,7 +38,7 @@ const Hero = () => {
             width={15}
             height={15}
           />
-          <span>@.praisemcb</span>
+          <span>@.dbruhhhh</span>
         </Link>
         <Link
           href="https://www.depop.com/dbruhhhh/"
