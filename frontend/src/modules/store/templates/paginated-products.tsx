@@ -86,10 +86,10 @@ export default async function PaginatedProducts({
       <div className="flex flex-col items-center justify-center w-full min-h-[50vh] gap-y-6 pt-20">
         <div className="flex flex-col items-center gap-y-2 text-center px-4">
           <p className="text-ui-fg-base text-large-semi uppercase tracking-[0.2em]">
-            No Items Found
+            More on the way
           </p>
-          <p className="text-ui-fg-subtle text-small-regular uppercase tracking-widest max-w-[300px]">
-            Adjust your filters to find available stock!
+          <p className="text-ui-fg-subtle text-small-regular uppercase tracking-widest max-w-[250px]">
+            Adjust filters to find available items!
           </p>
         </div>
       </div>
